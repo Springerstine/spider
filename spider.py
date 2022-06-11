@@ -6,7 +6,7 @@ target_url = str(sys.argv[1])
 target_links = []
 
 def extract_links(url):
-   response = requests.get(target_url)
+   response = requests.get(url)
    # regex: looks for href=" and then takes everything up until the next "
    return re.findall('(?:href=")(.*?)"', response.content.decode(errors="ignore"))
 
